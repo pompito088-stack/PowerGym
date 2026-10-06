@@ -1,0 +1,40 @@
+[ {
+  "fecha" : "2026-10-06T17:15:57.747836200Z",
+  "operacion" : "ELIMINAR",
+  "entidad" : "Cliente",
+  "id" : 1,
+  "datos" : {
+    "nombre" : "Laura",
+    "apellidos" : "Gómez Ruiz",
+    "dni" : "11111111A",
+    "entrenador" : "Carlos Martín",
+    "tipoMembresia" : "mañana",
+    "fechaAlta" : "2024-01-15"
+  }
+}, {
+  "fecha" : "2026-10-06T17:16:10.950072100Z",
+  "operacion" : "ACTUALIZAR",
+  "entidad" : "Cliente",
+  "id" : 2,
+  "datos" : {
+    "nombre" : "Pablox",
+    "apellidos" : "Sánchez López",
+    "dni" : "22222222B",
+    "entrenador" : "Elena Vidal",
+    "tipoMembresia" : "tarde",
+    "fechaAlta" : "2024-02-10"
+  }
+}, {
+  "fecha" : "2026-10-06T17:16:45.545778200Z",
+  "operacion" : "CREAR",
+  "entidad" : "Cliente",
+  "id" : 202,
+  "datos" : {
+    "nombre" : "aurys",
+    "apellidos" : "Sánchez López",
+    "dni" : "12345678B",
+    "entrenador" : "Elena Vidal",
+    "tipoMembresia" : "mañana",
+    "fechaAlta" : "2026-10-17"
+  }
+} ]
