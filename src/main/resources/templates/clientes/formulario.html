@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{fragments/layout :: layout(~{::title}, ~{::main})}">
+<head>
+    <title>Formulario de cliente</title>
+</head>
+<body>
+<main>
+
+    <h1 class="h3 mb-4" th:text="${cliente.id} != null ? 'Editar cliente' : 'Nuevo cliente'"></h1>
+
+    <form method="post" th:action="@{/clientes/guardar}" th:object="${cliente}" class="row g-3">
+
+        <input type="hidden" th:field="*{id}">
+
+        <div class="col-md-6">
+            <label class="form-label" for="nombre">Nombre</label>
+            <input type="text" class="form-control" id="nombre" th:field="*{nombre}"
+                   th:classappend="${#fields.hasErrors('nombre')} ? 'is-invalid'">
+            <div class="invalid-feedback" th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}"></div>
+        </div>
+
+        <div class="col-md-6">
+            <label class="form-label" for="apellidos">Apellidos</label>
+            <input type="text" class="form-control" id="apellidos" th:field="*{apellidos}"
+                   th:classappend="${#fields.hasErrors('apellidos')} ? 'is-invalid'">
+            <div class="invalid-feedback" th:if="${#fields.hasErrors('apellidos')}" th:errors="*{apellidos}"></div>
+        </div>
+
+        <div class="col-md-4">
+            <label class="form-label" for="dni">DNI</label>
+            <input type="text" class="form-control" id="dni" th:field="*{dni}"
+                   th:classappend="${#fields.hasErrors('dni')} ? 'is-invalid'">
+            <div class="invalid-feedback" th:if="${#fields.hasErrors('dni')}" th:errors="*{dni}"></div>
+        </div>
+
+        <div class="col-md-4">
+            <label class="form-label" for="entrenador">Entrenador</label>
+            <select class="form-select" id="entrenador" th:field="*{entrenador}"
+                    th:classappend="${#fields.hasErrors('entrenador')} ? 'is-invalid'">
+                <option value="">Selecciona...</option>
+                <option th:each="opcion : ${entrenadores}" th:value="${opcion}" th:text="${opcion.valorBd}"></option>
+            </select>
+            <div class="invalid-feedback" th:if="${#fields.hasErrors('entrenador')}" th:errors="*{entrenador}"></div>
+        </div>
+
+        <div class="col-md-4">
+            <label class="form-label" for="tipoMembresia">Tipo de membresia</label>
+            <select class="form-select" id="tipoMembresia" th:field="*{tipoMembresia}"
+                    th:classappend="${#fields.hasErrors('tipoMembresia')} ? 'is-invalid'">
+                <option value="">Selecciona...</option>
+                <option th:each="opcion : ${membresias}" th:value="${opcion}" th:text="${opcion.valorBd}"></option>
+            </select>
+            <div class="invalid-feedback" th:if="${#fields.hasErrors('tipoMembresia')}" th:errors="*{tipoMembresia}"></div>
+        </div>
+
+        <div class="col-md-4">
+            <label class="form-label" for="fechaAlta">Fecha de alta</label>
+            <input type="date" class="form-control" id="fechaAlta" th:field="*{fechaAlta}"
+                   th:classappend="${#fields.hasErrors('fechaAlta')} ? 'is-invalid'">
+            <div class="invalid-feedback" th:if="${#fields.hasErrors('fechaAlta')}" th:errors="*{fechaAlta}"></div>
+        </div>
+
+        <div class="col-12 mt-4">
+            <button type="submit" class="btn btn-primary">Guardar</button>
+            <a class="btn btn-outline-secondary" th:href="@{/clientes}">Cancelar</a>
+        </div>
+
+    </form>
+
+</main>
+</body>
+</html>
