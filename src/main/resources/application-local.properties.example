@@ -6,6 +6,7 @@
 # Solo si tu MySQL tiene otro usuario o contrasena:
 #   1. Copia este archivo como "application-local.properties" (sin ".example") en esta carpeta.
 #   2. Cambia los valores de abajo por los tuyos.
+#   3. Integracion a commit Johan
 
 spring.datasource.username=root
 spring.datasource.password=
